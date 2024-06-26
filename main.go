@@ -41,7 +41,7 @@ func (m *Message) MarshalJSON() ([]byte, error) {
 		return nil, fmt.Errorf("marshalling proto: %w", err)
 	}
 
-	return []byte(fmt.Sprintf(`{"method": %q, "type": %q, "message": %q}`, m.method, m.kind, string(msg))), nil
+	return []byte(fmt.Sprintf(`{"method": %q, "type": %q, "message": %s}`, m.method, m.kind, string(msg))), nil
 }
 
 type LoggingInterceptor struct {
