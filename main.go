@@ -74,6 +74,8 @@ func (li *LoggingInterceptor) Close() {
 }
 
 func main() {
+	flag.Parse()
+
 	interceptor, err := New()
 	must(err)
 
